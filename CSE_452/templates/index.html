@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="design_index.css"> -->
+    <title>Inserting prices of Bitcoin</title>
+    <style>
+    body 
+    {
+        margin: 40px;
+        padding: 0;
+        font-family: montserrat;
+        background-image: linear-gradient(rgba(0, 9, 6, 0.171),
+        rgba(1, 0, 25, 0.946)), url('{{ url_for('static', filename='bitcoin-2007769_1280.jpg') }}');
+        background-position: center;
+        background-size: cover;
+        background-attachment:fixed;
+        position: relative;
+        overflow: auto;}
+
+    .center
+    {
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        position: absolute;
+        background-color: rgba(58, 9, 9, 0.747);
+        border-radius: 15px;
+        left: 50%;
+        transform: translate(-50%, 00%);
+        padding: 10px;
+        width: 650px;
+    
+    }
+
+    form
+    {
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+    .header_class h1
+    {
+        text-align: center;
+        padding: 0 0 0 10px;
+        border-bottom: 3px solid rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
+        text-shadow: 3px 3px #000000;
+        padding-bottom: 20px;
+        
+    }
+
+    .form_contents  label
+    {
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px #000000;
+        margin-bottom: 20px;
+        
+    }
+    .center form
+    {
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+    .form_contents input
+    {
+        width : 31%;
+        height: 35px;
+        border-radius: 5px;
+        background-color: rgba(225, 225, 225, 0.587);
+
+    }
+
+    .form_contents input::placeholder
+    {
+        color: BLACK;
+    } 
+    .submit-button {
+    background-color: #a01b1b; 
+    color: white;              
+    padding: 10px 20px;         
+    border: none;               
+    border-radius: 5px;         
+    cursor: pointer;            
+    font-size: 16px;            
+    transition: background-color 0.2s ease; 
+
+}
+
+.submit-button:hover {
+    background-color: #305ec0; 
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <div class="header_class">
+            <h1>Insert different type of prices of Bitcoin</h1>
+        </div>
+
+        <div class="form_class">
+            <form class="form_contents" action="predict_prices" method="post">
+                <div>
+                    <label for="Close">Close:  (Today-Yesterday-Before_yesterday)</label>
+                    <br>
+                    <input type="number" id="Close" name="Close1" step="0.000001" required>
+                    <input type="number" id="Close" name="Close2" step="0.000001" required>
+                    <input type="number" id="Close" name="Close3" step="0.000001" required>
+                </div>
+                <br>
+                <div>
+                    <label for="Open">Open:    (Today-Yesterday-Before_yesterday)</label>
+                    <br>
+                    <input type="number" id="Open" name="Open1" step="0.000001" required>
+                    <input type="number" id="Open" name="Open2" step="0.000001" required>
+                    <input type="number" id="Open" name="Open3" step="0.000001" required>
+
+                </div>
+                <br>
+                <div>
+                    <label for="Low">Low:   (Today-Yesterday-Before_yesterday)</label>
+                    <br>
+                    <input type="number" id="Low" name="Low1" step="0.000001" required>
+                    <input type="number" id="Low" name="Low2" step="0.000001" required>
+                    <input type="number" id="Low" name="Low3" step="0.000001" required>
+                </div>
+                <br>
+                <div>
+                    <label for="High">High:   (Today-Yesterday-Before_yesterday)</label>
+                    <br>
+                    <input type="number" id="High" name="High1" step="0.000001" required>
+                    <input type="number" id="High" name="High2" step="0.000001" required>
+                    <input type="number" id="High" name="High3" step="0.000001" required>
+                </div>
+                <br>
+                <br>
+                <div class="submit_text"></div>
+                    <input type="submit" value="Predict" class="submit-button">
+                </div>
+                <br>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
